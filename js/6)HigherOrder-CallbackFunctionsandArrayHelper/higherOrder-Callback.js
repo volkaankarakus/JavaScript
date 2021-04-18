@@ -50,4 +50,22 @@ diziIslemleri(Dizi,ucEkle)
 //diziIslemleri icerisinde cagirilan fonksiyonlarda () isareti yok.Cunku cagirilma bu anda degil, diziIslemleri'nde.
 //  diziIslemleri icerisinde geri cagirildigi icin bunlara call-back function denir.
 
+ 
+////////////////////////////////////////////////////////////////////////////
+function adimiSoyle(ad,soyad,callback){
+    const mesaj='merhaba '+ad.toUpperCase() + ' ' + soyad.toUpperCase()
+    callback(mesaj)
+}
+
+adimiSoyle('volkan','karakus',mesajGoster)
+
+function mesajGoster(mesaj){
+    console.log(mesaj)
+}
+
+
+
+
+
+
 
