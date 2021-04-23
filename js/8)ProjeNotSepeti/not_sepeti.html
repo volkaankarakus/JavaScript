@@ -1,0 +1,69 @@
+
+<!-- botstrap ile daha guzel arayuzler elde etsek de temel CSS bilgisi gerekli.--> 
+
+<!-- asagidaki kodu ! + enter ile taslak olarak getirdik. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=,, initial-scale=1.0">
+    <title>Not Sepeti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="main.css" class="css">
+</head>
+
+
+<body>
+    <header class="header">   <!-- header. diyip entera basarsak class adi yazabilirim.Sınıf adi header olan bir header olusturdu.-->
+        <h1 class="main-title"> <!-- h1.main-title yazarak : h1'in sinif adina main title girmis olduk -->
+            Not Sepeti
+        </h1>
+    </header>
+
+    <form class="gorev-form" action="#"> <!-- yukarida header'i olusturduk. Simdi bana notlari girecegim bir form lazim.Herhangi bir
+                                                action'a ihtiyaci yok, # koyduk.-->
+        <input type="text" class="form-item input-gorev" placeholder='Not giriniz '> <!-- input.input-gorev ile isim verdik.-->
+        <button class="form-item btn-gorev-ekle" type="submit">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+                        <!-- input girilecek yeri belirledik. Burada da submit etme kismi-->
+                         <!-- direk boyle ekle yapmak yerine internete cdn fontawesome yaziyoruz. cdnjs sitesinden son surumu kopyalayip, yukarida 
+                        title Not Sepetinin altina kopyaladik (yeni bir link bolumu olan yer) -->
+                        <!-- font awesome icons diye aratarak fontawesome.com'dan arama yerine plus yazip bir icon bulup onun kodunu kopyalayip buraya 
+                        yapistiriyoruz. -->
+        </button>
+    </form>
+
+    <div class="gorev-container"> <!-- .gorev-container yaparak bir class actik.-->
+        <ul class="gorev-listesi"> <!-- gorevlerimizi listeleyecegimiz bir ul olusturalim.-->
+            <div class="gorev-item gorev-tamamlandi"> <!-- gorevin kendisi, tamamlandı butonu, silme butonu. Bunlari bir arada tutmak icin bir div olusturalim.-->
+                <li class="gorev-tanim">
+                    Markete Git
+                </li>
+                <button class="gorev-btn gorev-btn-tamamlandi"> <!-- TAMAMLANDI ve SIL icin ortak ve farkli ozellikler olabilir.Ortaklar gorev-btn'ye, farkliliklar devamina -->
+                    <i class="fas fa-check"></i> <!-- TAMAMLANDI icin fontawesome'dan check iconu kopyaladik.-->
+                </button>
+                <button class="gorev-btn gorev-btn-sil">
+                    <i class="fas fa-trash-alt"></i> <!-- SIL icin icon-->
+                </button>
+            </div>   
+       
+            <div class="gorev-item">   <!-- gorevin kendisi, tamamlandı butonu, silme butonu. Bunlari bir arada tutmak icin bir div olusturalim.-->
+                <li class="gorev-tanim">
+                    Markete Git
+                </li>
+                <button class="gorev-btn gorev-btn-tamamlandi"> 
+                    <i class="fas fa-check"></i> 
+                </button>
+                <button class="gorev-btn gorev-btn-sil">
+                    <i class="fas fa-trash-alt"></i> 
+                </button>
+            </div>   
+        </ul>
+    </div>
+
+
+    <script src="not_sepeti.js"></script>
+</body>
+</html>
