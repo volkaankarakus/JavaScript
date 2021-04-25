@@ -60,4 +60,24 @@ Ogrenci2.prototype = Object.create(Person2.prototype);
 const ali= new Ogrenci2('ali','veli',30,4);
 console.log(ali.selamVer())
 
-// video yarim kaldi,13:51
+
+// ogrenciye yasini soylettirelim
+Ogrenci2.prototype.yasiniSoyle = function () {
+    return `Merhaba ben ${this.yas} yasindayim.`
+}
+
+// *********************************************************************************************************************************
+function MyArray(){
+
+}
+
+const myArray = new MyArray();
+console.log(myArray); // bunu yazdirdigimda bos bir Object gormeyi bekliyorum.
+
+MyArray.prototype = Object.create(Array.prototype);
+myArray.push(1234123);
+myArray.push(asdasdasd);
+myArray.push(sdfjnsdfnsnjfnsjf);
+
+console.log(myArray);
+ 
