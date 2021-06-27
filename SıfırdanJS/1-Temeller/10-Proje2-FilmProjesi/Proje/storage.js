@@ -37,3 +37,20 @@ Storage.prototype.getFilmsFromStorage = function () {
 
     return films;
 }
+
+Storage.prototype.deleteFilmFromStorage = function (filmTitle){
+    // localStorage'dan array'imizi alalim
+    let films = this.getFilmsFromStorage();
+
+    films.forEach(function (film,index){
+        if(film.title === filmTitle){
+            films.splice(index,1);
+        }
+    });
+
+    localStorage.setItem("films",JSON.stringify(films));
+}
+
+Storage.prototype.clearAllFilmsFromStorage = function() {
+    localStorage.removeItem("films"); // "films" key'ini tamamen kaldirirsak hepsini silmis oluruz
+}
