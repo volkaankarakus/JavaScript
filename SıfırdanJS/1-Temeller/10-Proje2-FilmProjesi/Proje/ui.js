@@ -72,15 +72,37 @@ UI.prototype.displayMessages = function(message,type){
 }
 
 UI.prototype.loadAllFilms = function(films){
+
+    // film listemiz HTML'deki id'si "films" olan tbody'ydi.
     const filmList = document.getElementById("films");
+
+    // forEach ile her filmi alalim
     films.forEach(function(film){
-        filmList.innerHTML +=`
+        filmList.innerHTML +=` 
             <tr>
                 <td><img src=" ${film.url} " class="img-fluid img-thumbnail"></td> 
                 <td> ${film.title} </td>
                 <td> ${film.director}</td> 
                 <td><a href="#" id = "delete-film" class = "btn btn-danger">Filmi Sil</a></td>
             </tr>
-    `;
+    `; // her seferinde uzerine eklesin diye += yaptik.
+
     });
+}
+
+UI.prototype.deleteFilmFromUI = function(element) {
+    element.parentElement.parentElement.remove(); // iki kere parent element gidip kaldirdik.
+}
+
+UI.prototype.clearAllFilmsFromUI = function(){
+    // ilk olarak film listesini seciyoruz
+    // tbody'mizin id'si films seklinde
+    const filmList = document.getElementById("films");
+
+    // tbody'mizin icinde child kalmayana kadar silelim
+    // bunu filmList.innerHTML = ""; olarak yapabiliyorduk ama bu yavas calisiyordu
+
+    while(filmList.firstElementChild !== null){ // child oldugu surece sil
+        filmList.firstChild.remove();
+    }
 }
