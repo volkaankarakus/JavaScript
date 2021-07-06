@@ -1,0 +1,17 @@
+[ 
+    {
+        "name": "Volkan Karakus",
+        "department": "IoT",
+        "salary": 5000
+    },
+    {
+        "name": "Ali Kus",
+        "department": "Ads",
+        "salary": 3000
+    },
+    {
+        "name": "Veli Kara",
+        "department": "Economy",
+        "salary": 6000
+    }
+]
