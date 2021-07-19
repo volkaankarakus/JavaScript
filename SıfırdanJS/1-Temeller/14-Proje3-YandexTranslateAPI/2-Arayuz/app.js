@@ -20,13 +20,14 @@ function eventListeners(){
 
 }
 
-const translate = new Translate(document.getElementById("word").value,document.getElementById("language").value);
+const translate = new Translate(document.getElementById("word").value,document.getElementById("language").value); // bu translate'e word ve language gondermemiz gerekiyor.
 
 const ui = new UI();
 
 function translateWord(e){
-
+    // CEVIR e basinca translateWord calismaya basladiginda oncelik parametreleri update etmek 
     translate.changeParameters(document.getElementById("word").value,getElementById("language").value)
+    
     translate.translateWord(function(err,response){
         if(err){ // null gelmedigi surece string gelse bile true olarak sayilir.
             // Hata
