@@ -8,6 +8,7 @@ const lastUsers = document.getElementById('last-users');
 
 const github = new Github(); 
 
+const ui = new UI();
 
 eventListeners();
 
@@ -35,7 +36,7 @@ function getData (e){
                 console.log("Hatali Username girdiniz....");
             }
             else{
-                console.log(response);
+                ui.showUserInfo(response.user); 
             }
         })
         .catch(err => console.error(err));
@@ -44,7 +45,7 @@ function getData (e){
 
     
     
-    
+    ui.clearInput();  // Input Temizleme 
     e.preventDefault();
 }
 
