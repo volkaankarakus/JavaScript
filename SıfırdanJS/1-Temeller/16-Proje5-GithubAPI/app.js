@@ -33,13 +33,17 @@ function getData (e){
         .then(response => {
             if(response.user.message === "Not Found"){
                 // Hata Mesaji 
-                console.log("Hatali Username girdiniz....");
+                ui.showError("Kullanici bulunamadi.");
             }
             else{
+                ui.addSearchedUserToUI(username);
+                Storage.addSearchedUserToStorage(username);
                 ui.showUserInfo(response.user); 
+                ui.showRepoInfo(response.repo);
+
             }
         })
-        .catch(err => console.error(err));
+        .catch(err => ui.showError(err));
     
     }
 
@@ -53,12 +57,24 @@ function getData (e){
 
 function clearAllSearched(){
     // Tum arananlari temizle 
+    if(confirm("Emin misiniz?")){
+        Storage.clearAllSearchedUsersFromStorage(); // Storage'dan temizleme
+        ui.clearAllSearchedFromUI();
 
+    }
 }
 
 function getAllSearched(){
     // Arananlari storagedan UI'a ekle
+    let users = Storage.getSearchedUsersFromStorage();
 
+    let result = "";
+    users.forEach( user => {
+        // <li class="list-group-item">asdaskdjkasjkşdjşasjd</li>
+        result += `<li class="list-group-item"> ${user}</li>`;
 
+    });
+
+    lastUsers.innerHTML = result ;
 
 }
