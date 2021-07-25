@@ -28,5 +28,9 @@ class Github {
             user : userData, 
             repo : repoData   // obje seklinde donerek, key kullandik.
         }
+
+
+         
     }
+
 }
